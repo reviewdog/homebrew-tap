@@ -2,9 +2,9 @@
 class Reviewdog < Formula
   desc "Automated code review tool integrated with any code analysis tools regardless of programming language."
   homepage "https://github.com/reviewdog/reviewdog"
-  url "https://github.com/reviewdog/reviewdog/releases/download/v0.0.1-goreleaser-test/reviewdog_0.0.1-goreleaser-test_Darwin_x86_64.tar.gz"
-  version "0.0.1-goreleaser-test"
-  sha256 "7e5029a84c2d047e38102095912ccb7e7570f597120808c3c2cdfd4ebb6a7881"
+  url "https://github.com/reviewdog/reviewdog/releases/download/v0.9.12/reviewdog_0.9.12_Darwin_x86_64.tar.gz"
+  version "0.9.12"
+  sha256 "4d2e8a7f528769f1d3c7eaf2432aa0ce36f959bae44649ac32cb95084478b1b6"
 
   def install
     bin.install "reviewdog"
