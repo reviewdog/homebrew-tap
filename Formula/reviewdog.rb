@@ -2,9 +2,18 @@
 class Reviewdog < Formula
   desc "Automated code review tool integrated with any code analysis tools regardless of programming language."
   homepage "https://github.com/reviewdog/reviewdog"
-  url "https://github.com/reviewdog/reviewdog/releases/download/v0.9.12/reviewdog_0.9.12_Darwin_x86_64.tar.gz"
-  version "0.9.12"
-  sha256 "4d2e8a7f528769f1d3c7eaf2432aa0ce36f959bae44649ac32cb95084478b1b6"
+  version "0.9.13"
+  bottle :unneeded
+
+  if OS.mac?
+    url "https://github.com/reviewdog/reviewdog/releases/download/v0.9.13/reviewdog_0.9.13_Darwin_x86_64.tar.gz"
+    sha256 "52a6cf9bd733450257bedeff49b3a7c25eae7185782d97e6f6618d125ff30569"
+  elsif OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/reviewdog/reviewdog/releases/download/v0.9.13/reviewdog_0.9.13_Linux_x86_64.tar.gz"
+      sha256 "08e56e258aa81659645f715da00912a160726348e673b2c33e281fed47347c6a"
+    end
+  end
 
   def install
     bin.install "reviewdog"
