@@ -7,11 +7,11 @@ class Reviewdog < Formula
 
   if OS.mac?
     url "https://github.com/reviewdog/reviewdog/releases/download/v0.9.13/reviewdog_0.9.13_Darwin_x86_64.tar.gz"
-    sha256 "52a6cf9bd733450257bedeff49b3a7c25eae7185782d97e6f6618d125ff30569"
+    sha256 "09ad31f8a9b59c5e20487d3e55bcd26126e73e86b350a3ceba97cf57098a0e06"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/reviewdog/reviewdog/releases/download/v0.9.13/reviewdog_0.9.13_Linux_x86_64.tar.gz"
-      sha256 "08e56e258aa81659645f715da00912a160726348e673b2c33e281fed47347c6a"
+      sha256 "1e390b13633a5a3b43326403a7f688f392ad903bfd7809e05650f975f3402ad6"
     end
   end
 
