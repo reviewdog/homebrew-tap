@@ -6,7 +6,6 @@ class Reviewdog < Formula
   desc "Automated code review tool integrated with any code analysis tools regardless of programming language."
   homepage "https://github.com/reviewdog/reviewdog"
   version "0.13.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
