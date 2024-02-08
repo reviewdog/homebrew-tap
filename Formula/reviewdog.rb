@@ -5,20 +5,20 @@
 class Reviewdog < Formula
   desc "Automated code review tool integrated with any code analysis tools regardless of programming language."
   homepage "https://github.com/reviewdog/reviewdog"
-  version "0.17.0"
+  version "0.17.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.0/reviewdog_0.17.0_Darwin_x86_64.tar.gz"
-      sha256 "d08f07b3a1658275fe843f5742bc350d7c3f9c358b82eb030e494b147474f950"
+    if Hardware::CPU.arm?
+      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.1/reviewdog_0.17.1_Darwin_arm64.tar.gz"
+      sha256 "63a93090391deb185b64c1f27746ab420e247f8a4be8e00ebb85ffc973fe92f1"
 
       def install
         bin.install "reviewdog"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.0/reviewdog_0.17.0_Darwin_arm64.tar.gz"
-      sha256 "ed0d50143a0f5e76b1ce6ea8a8b01f78b05d635f932fa14db0ecd0e607912c15"
+    if Hardware::CPU.intel?
+      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.1/reviewdog_0.17.1_Darwin_x86_64.tar.gz"
+      sha256 "75a4d5f59e0ca948afdc4b1933e662e43db1c667fecb62453b889f8f52e92dd0"
 
       def install
         bin.install "reviewdog"
@@ -27,25 +27,25 @@ class Reviewdog < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.1/reviewdog_0.17.1_Linux_armv6.tar.gz"
+      sha256 "5d75d43daa4dcdd2964c3d077605bd8e78ef82a15f367fe3892cb5c9cf792c2e"
+
+      def install
+        bin.install "reviewdog"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.0/reviewdog_0.17.0_Linux_x86_64.tar.gz"
-      sha256 "dd909fbe1dacd53975060f7ecd4028b9bbf43ac4a6e40220b90afec779095ce1"
+      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.1/reviewdog_0.17.1_Linux_x86_64.tar.gz"
+      sha256 "f5a198ab05b0b170be3d17b05b41813eabf3830c9613894b54341d4078662599"
 
       def install
         bin.install "reviewdog"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.0/reviewdog_0.17.0_Linux_arm64.tar.gz"
-      sha256 "1bdd0f0fc1164e82cca664aa975cc71d8593cb61d36d3df64cbbb73f7861f97c"
-
-      def install
-        bin.install "reviewdog"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.0/reviewdog_0.17.0_Linux_armv6.tar.gz"
-      sha256 "f014b6f65874a2625fe692d42ebdcf49ea28c83835d1a92b93a07183d7f223f2"
+      url "https://github.com/reviewdog/reviewdog/releases/download/v0.17.1/reviewdog_0.17.1_Linux_arm64.tar.gz"
+      sha256 "82be55f266e14fad5c5bda4bf3202b54f1a68b47d7eccca3f60fb5789eba77eb"
 
       def install
         bin.install "reviewdog"
